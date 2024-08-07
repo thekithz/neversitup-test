@@ -1,0 +1,220 @@
+{
+	"info": {
+		"_postman_id": "fabd27d7-beaa-4711-97d3-d05af448201e",
+		"name": "demo-project",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "14689082",
+		"_collection_link": "https://lunar-astronaut-322694.postman.co/workspace/Prowise~fff94a53-ff22-4a9a-bded-174d6ba5b10d/collection/14689082-fabd27d7-beaa-4711-97d3-d05af448201e?action=share&source=collection_link&creator=14689082"
+	},
+	"item": [
+		{
+			"name": "users",
+			"item": [
+				{
+					"name": "create",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"email\": \"test@test.com\",\n    \"password\": \"demepass\",\n    \"first_name\": \"test\",\n    \"last_name\": \"lastm\",\n    \"phone\": \"08988383838\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:3090/users/create",
+							"host": [
+								"localhost"
+							],
+							"port": "3090",
+							"path": [
+								"users",
+								"create"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "update",
+					"request": {
+						"method": "PATCH",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"first_name\": \"test1\",\n    \"last_name\": \"lastm1\",\n    \"phone\": \"0898838383\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:3090/users/update/66b326535d67f58414208f06",
+							"host": [
+								"localhost"
+							],
+							"port": "3090",
+							"path": [
+								"users",
+								"update",
+								"66b326535d67f58414208f06"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:3090/users/get/66b326535d67f58414208f06",
+							"host": [
+								"localhost"
+							],
+							"port": "3090",
+							"path": [
+								"users",
+								"get",
+								"66b326535d67f58414208f06"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "list",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:3090/users/list?email=test@test2.com&first_name=test&last_name=lastm&phone=08988383838",
+							"host": [
+								"localhost"
+							],
+							"port": "3090",
+							"path": [
+								"users",
+								"list"
+							],
+							"query": [
+								{
+									"key": "email",
+									"value": "test@test2.com"
+								},
+								{
+									"key": "first_name",
+									"value": "test"
+								},
+								{
+									"key": "last_name",
+									"value": "lastm"
+								},
+								{
+									"key": "phone",
+									"value": "08988383838"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "remove",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "localhost:3090/users/remove/66b326535d67f58414208f06",
+							"host": [
+								"localhost"
+							],
+							"port": "3090",
+							"path": [
+								"users",
+								"remove",
+								"66b326535d67f58414208f06"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "login",
+			"item": [
+				{
+					"name": "authentication",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									""
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						},
+						{
+							"listen": "prerequest",
+							"script": {
+								"exec": [
+									""
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "x-group-signature",
+								"value": "640ea37e603b53ad60dca710",
+								"type": "text",
+								"disabled": true
+							},
+							{
+								"key": "x-brand-signature",
+								"value": "640ea3fa603b53ad60dca75c",
+								"type": "text",
+								"disabled": true
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"strategy\": \"local\",\n    \"email\": \"test@test.com\",\n    \"password\": \"demepass\"\n}\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:3090/authentication",
+							"host": [
+								"localhost"
+							],
+							"port": "3090",
+							"path": [
+								"authentication"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}
