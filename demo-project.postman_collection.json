@@ -1,5 +1,6 @@
 {
 	"info": {
+		"test": "hell",
 		"_postman_id": "fabd27d7-beaa-4711-97d3-d05af448201e",
 		"name": "demo-project",
 		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
